@@ -1,0 +1,166 @@
+% -------------------- 导言 -------------------- %
+\documentclass[UTF8]{ctexart}
+
+% 化学式
+\usepackage[version=4]{mhchem}
+
+\usepackage{lmodern}
+
+% 设置页边距
+\usepackage{geometry}
+\geometry{left=3.18cm, right=3.18cm, top=2.54cm, bottom=2.54cm}
+
+% 图片
+\usepackage{graphicx}
+% 图片位置
+\usepackage{float}
+% 并排
+\usepackage{subfigure}
+\usepackage{parskip}
+
+% 页眉
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[L]{\small \CJKfontspec{SimHei}第九届生物信息设计与技能竞赛}          % 左页眉
+\fancyhead[R]{\small \CJKfontspec{SimHei}大豆根系微生物的基因鉴定与基因功能预测}    % 右页眉
+% \fancyhead[L]{中间页眉}
+% \fancyfoot[L]{左页脚}
+\fancyfoot[C]{第 \thepage 页 \quad 共 \pageref{LastPage} 页}
+% \fancyfoot[R]{右页脚}
+\renewcommand{\headrulewidth}{1pt} % 分隔线宽度 1 磅
+% \renewcommand{\footrulewidth}{4pt}
+
+% 获取最后一页
+\usepackage{lastpage}
+
+% 字体
+% \usepackage{fontspec}
+\setmainfont{Times New Roman} % 英文正文字体
+
+
+% 设置标号深度
+\setcounter{secnumdepth}{3}
+\author{}
+\date{}
+
+% 设置表格图片标题
+\usepackage{caption}
+\captionsetup[table]{
+    font={small, bf},
+    labelsep=quad,
+    skip=0pt
+}
+\captionsetup[figure]{
+    font={small, bf},
+    labelsep=quad,
+    skip=0pt
+}
+
+% 摘要
+\usepackage{abstract}
+% 标题格式 无衬线 加粗 四号
+\renewcommand{\abstractnamefont}{\sffamily\bfseries\Large}
+% 标题左对齐
+\renewcommand{\absnamepos}{flushleft}
+% 正文格式
+\renewcommand{\abstracttextfont}{\rmfamily\normalsize}
+% 正文两端无缩进
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+% 生成随机文本用于展示排版
+\usepackage{lipsum}
+
+% 由于 flushleft/right 取消了 ctex 的默认缩进
+% 需要手动设置缩进
+\setlength{\parindent}{2em}
+
+% 三线表
+\usepackage{booktabs}
+
+% \setlength{\bibleftmargin}{0pt}
+% \setlength{bibindent}{2em}
+
+\ctexset{
+    % 一级标题 无衬线（黑体），左对齐，四号（14 pt）
+    % 标题标号与内容之间空一格
+    section/format              +=  \sffamily\raggedright\Large, 
+    section/aftername           =   \quad,
+    % 二级标题 无衬线（黑体），小四（12 pt） 默认左对齐
+    % 标题标号与内容之间空一格
+    subsection/format           +=  \sffamily\large,
+    subsection/aftername        =   \quad,
+    subsection/afterskip        =   0pt,
+    % 三级标题 小四（12 pt） 默认衬线 对齐
+    % 标题标号与内容之间空一格
+    subsubsection/format        +=  \large,
+    subsubsection/indent        =   2em,
+    subsubsection/number        =   (\arabic{subsubsection}),
+    subsubsection/afterskip     =   0pt,
+}
+
+\title{\vspace*{-1.5cm} \CJKfontspec{SimHei}大豆根系微生物的基因鉴定与基因功能预测}
+
+% -------------------- 正文 -------------------- %
+\begin{document}
+
+    % 令标题页显示页眉页脚
+    \maketitle\thispagestyle{fancy}
+    \vspace*{-1.5cm}
+
+    % 右对齐 赛道与团队信息
+    \begin{flushright}
+        {\zihao{5} \heiti  ——竞赛单元“2-1基因组”}
+
+        % 空一行
+        \vspace*{\baselineskip} 
+
+        团队名称：xxxx小队 \\
+        指导老师：xxx \\
+        团队成员：xxx，xxx，xxx，xxx \\
+    \end{flushright}
+
+
+    \begin{abstract}
+        请在这里输入摘要\textsuperscript{\cite{ref1}}\lipsum
+    \end{abstract}
+    
+
+    {\heiti \zihao{-4} \raggedright 关键字：} {\zihao{5} 请在，这里，输入，关键字}
+
+
+    \section{引言 这是一级标题}
+
+    \subsection{这是二级标题}
+
+    \subsubsection{这是三级标题}
+
+    \lipsum
+
+
+    % \begin{figure}[!htbp]
+    %     \centering
+    %     \includegraphics*[width=0.7\textwidth]{img/en_graphlan.pdf}
+    %     \caption{培养菌进化分支树（根内）}
+
+    %     \includegraphics*[width=0.7\textwidth]{img/rhi_graphlan.pdf}
+    %     \caption{培养菌进化分支树（根际）}
+    % \end{figure}
+
+
+
+    \section{总结与展望}
+
+    \lipsum
+
+    % 这里是参考文献
+    \begin{thebibliography}{0}
+        \bibitem{ref1} \lipsum[1]
+
+        \bibitem{ref2} \lipsum[1]
+
+        
+
+    \end{thebibliography}
+
+\end{document}
